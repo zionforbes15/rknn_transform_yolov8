@@ -1,2 +1,4 @@
 # rknn_transform_yolov8
-The Orange Pi 5 Max serves as the host computer, running YOLOv8 for real-time object detection. The model is converted from .pt to ONNX, then quantized and pruned into an INT8 RKNN file for efficient NPU acceleration on the RK3588 chip.
+Using the Orange Pi 5 Max development board as the host computer, the system deploys the YOLOv8 visual model for inference. The process involves converting the .pt file to ONNX format, then quantizing and pruning the ONNX file to generate an INT8-format RKNN file. Leveraging the onboard RK3588 chip’s NPU for accelerated inference, the system integrates an Intel D455 depth camera to achieve real-time object detection and depth measurement. The measured distance is evaluated against a predefined range, and specific data is transmitted to the lower-level device via UART serial communication, enabling real-time data transfer.
+
+利用香橙派5max开发板作为上位机，搭载yolov8视觉模型推理，实现.pt文件转换.onnx,再由onnx文件量化剪枝转换为int8格式的rknn文件，最后利用板载的rk3588芯片的NPU加速推理，结合Intel D455深度相机，实现对特定物体的实时检测与深度测距，并将距离带入范围检测，发送特定数据到下位机的uart串口，实现实时通信传输
