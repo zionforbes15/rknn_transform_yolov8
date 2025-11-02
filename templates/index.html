@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D455 实时视频流</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .video-container {
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #000;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            text-align: left;
+        }
+        
+        .status {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>目标检测实时视频流</h1>
+        
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="实时视频流">
+        </div>
+        
+        <div class="info">
+            <h3>说明：</h3>
+            <ul>
+                <li><strong>CMD</strong>: 距离控制命令（1-5对应不同距离范围，0表示无目标）</li>
+                <li><strong>POS</strong>: 位置控制命令（6-右边，7-左边，8-中心，0-无目标）</li>
+                <li><strong>FPS</strong>: 当前帧率</li>
+            </ul>
+            <p class="status">✓ 视频流正在运行中...</p>
+        </div>
+    </div>
+</body>
+</html>
